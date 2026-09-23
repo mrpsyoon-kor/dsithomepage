@@ -284,6 +284,58 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
 .kakao-float span{width:34px;height:34px;border-radius:50%;background:#191600;color:#FEE500;display:grid;place-items:center;font:700 14px/1 var(--font-en)}
 
 /* ---------- responsive ---------- */
+/* ---------- simulator ---------- */
+.sim{background:var(--navy-2);color:#fff;position:relative;overflow:hidden}
+.sim::before{content:"";position:absolute;width:560px;height:560px;left:-180px;bottom:-220px;border-radius:50%;background:rgba(39,196,232,.16);filter:blur(110px)}
+.sim::after{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-120px;border-radius:50%;background:rgba(228,68,143,.12);filter:blur(110px)}
+.sim .eyebrow{color:var(--cyan)}
+.sim-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.sim h2{margin:18px 0 16px;font-size:clamp(30px,3.6vw,44px);line-height:1.28;font-weight:700;letter-spacing:-.03em}
+.sim-lead{margin:0 0 40px;color:rgba(255,255,255,.68);font-size:16px}
+.sim-field{margin-bottom:32px}
+.sim-field-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.sim-field-head label{font-size:15px;font-weight:600;margin:0}
+.sim-field-head output{font:600 26px/1 var(--font-en);letter-spacing:-.02em}
+.sim-field-head output small{font:500 13px/1 var(--font-kr);color:rgba(255,255,255,.55);margin-left:4px}
+.sim input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:999px;background:rgba(255,255,255,.12);outline:none;cursor:pointer;border:0;padding:0}
+.sim input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid var(--thumb,var(--cyan));box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.sim input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:5px solid var(--thumb,var(--cyan))}
+.sim input[type=range]:focus-visible{box-shadow:0 0 0 3px rgba(39,196,232,.35)}
+.sim-scale{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:rgba(255,255,255,.4)}
+.units{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.units button{height:52px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:rgba(255,255,255,.7);font:600 16px/1 var(--font-kr);cursor:pointer;transition:all .2s}
+.units button:hover{border-color:rgba(255,255,255,.35);color:#fff}
+.units button[aria-pressed=true]{background:var(--cyan);border-color:var(--cyan);color:var(--navy);box-shadow:0 10px 26px -10px rgba(39,196,232,.8)}
+.sim-card{border-radius:24px;padding:34px 32px 30px}
+.rec{display:flex;align-items:center;gap:16px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1)}
+.rec-img{width:64px;height:78px;flex:none;border-radius:12px;background:rgba(255,255,255,.9);display:grid;place-items:center;overflow:hidden}
+.rec-img img{max-width:86%;max-height:88%;object-fit:contain}
+.rec small{display:block;font:500 11px/1.2 var(--font-en);letter-spacing:.14em;color:rgba(255,255,255,.5)}
+.rec strong{display:block;font-size:18px;font-weight:600;margin-top:4px}
+.rec span{font-size:13px;color:rgba(255,255,255,.6)}
+.monthly{padding:24px 0 22px}
+.monthly small{font-size:13px;color:rgba(255,255,255,.6)}
+.monthly b{display:block;margin-top:6px;font:700 clamp(34px,4vw,46px)/1.1 var(--font-en);letter-spacing:-.03em}
+.monthly b em{font:600 18px/1 var(--font-kr);font-style:normal;color:var(--cyan);margin-left:4px}
+.monthly .plan{display:block;margin-top:8px;font-size:13px;color:rgba(255,255,255,.6)}
+.compare{display:grid;gap:10px}
+.cmp-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:rgba(255,255,255,.62)}
+.cmp-row s{font:500 15px/1 var(--font-en);color:rgba(255,255,255,.5)}
+.cmp-dsit{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-radius:14px;background:rgba(39,196,232,.12);border:1px solid rgba(39,196,232,.3)}
+.cmp-dsit span{font-size:14px;font-weight:600;color:#9FE6F6}
+.cmp-dsit strong{font:700 20px/1 var(--font-en)}
+.save-line{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;padding-top:14px}
+.save-line span{font-size:14px;font-weight:600}
+.save-line strong{font:700 24px/1 var(--font-en);color:var(--cyan)}
+.hs-note{padding:26px 0 8px;color:rgba(255,255,255,.75);font-size:15px}
+.sim-cta{margin-top:24px;width:100%;height:56px;border-radius:12px;border:0;background:#fff;color:var(--navy);font:700 16px/1 var(--font-kr);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s}
+.sim-cta:hover{transform:translateY(-2px)}
+.sim-disc{margin:14px 0 0;font-size:12px;color:rgba(255,255,255,.45);line-height:1.6}
+.sample-badge{display:inline-block;margin-left:8px;font:600 11px/1 var(--font-kr);padding:4px 8px;border-radius:6px;background:rgba(242,194,48,.18);color:#F5D267;vertical-align:middle}
+.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,100%{box-shadow:none}30%{box-shadow:0 0 0 4px rgba(39,196,232,.45)}}
+@media (max-width:920px){.sim-grid{grid-template-columns:1fr;gap:40px}}
+@media (max-width:600px){.sim-card{padding:26px 22px}.units button{height:46px;font-size:15px}.sim-field-head output{font-size:22px}}
 @media (max-width:1080px){
   .nav{gap:22px}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
@@ -352,6 +404,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
       <a href="#about">회사소개</a>
       <a href="#business">사업영역</a>
       <a href="#products">렌탈상품</a>
+      <a href="#simulator">견적계산</a>
       <a href="#smart">스마트관리</a>
       <a href="#support">고객지원</a>
       <a href="#contact">상담문의</a>
@@ -367,7 +420,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
   </div>
   <nav class="mobile-nav" id="mnav" aria-label="모바일 메뉴">
     <a href="#about">회사소개</a><a href="#business">사업영역</a><a href="#products">렌탈상품</a>
-    <a href="#smart">스마트관리</a><a href="#support">고객지원</a><a href="#contact">상담문의</a>
+    <a href="#simulator">견적계산</a><a href="#smart">스마트관리</a><a href="#support">고객지원</a><a href="#contact">상담문의</a>
   </nav>
 </header>
 
@@ -566,6 +619,61 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
   </div>
 </section>
 
+<!-- SIMULATOR -->
+<section class="sim" id="simulator">
+  <div class="wrap sim-grid">
+    <div>
+      <div class="eyebrow">RENTAL SIMULATOR</div>
+      <h2>우리 사무실 예상 비용,<br>바로 계산해 보세요.</h2>
+      <p class="sim-lead">출력량과 기기 수를 움직이면 맞는 장비와 예상 렌탈료, 자체 구매 대비 비용을 바로 보여드립니다.</p>
+
+      <div class="sim-field">
+        <div class="sim-field-head"><label for="s-mono">월 흑백 출력량</label><output id="o-mono">2,000<small>매</small></output></div>
+        <input type="range" id="s-mono" min="0" max="20000" step="500" value="2000" style="--thumb:var(--cyan)">
+        <div class="sim-scale"><span>0</span><span>10,000</span><span>20,000매</span></div>
+      </div>
+
+      <div class="sim-field">
+        <div class="sim-field-head"><label for="s-color">월 컬러 출력량</label><output id="o-color">200<small>매</small></output></div>
+        <input type="range" id="s-color" min="0" max="3000" step="50" value="200" style="--thumb:var(--magenta)">
+        <div class="sim-scale"><span>0 (흑백만 사용)</span><span>3,000매</span></div>
+      </div>
+
+      <div class="sim-field" style="margin-bottom:0">
+        <div class="sim-field-head"><label>기기 수량</label></div>
+        <div class="units" role="group" aria-label="기기 수량">
+          <button type="button" data-u="1" aria-pressed="true">1대</button>
+          <button type="button" data-u="2" aria-pressed="false">2대</button>
+          <button type="button" data-u="3" aria-pressed="false">3대</button>
+          <button type="button" data-u="5" aria-pressed="false">5대</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-card glass" aria-live="polite">
+      <div class="rec">
+        <div class="rec-img"><img id="r-img" alt=""></div>
+        <div><small>RECOMMENDED</small><strong id="r-name">컬러 복합기</strong><span id="r-desc">일반 사무실 · 컬러 자료</span></div>
+      </div>
+
+      <div id="r-priced">
+        <div class="monthly"><small>예상 월 렌탈료</small><b id="r-month">-</b><span class="plan" id="r-plan"></span></div>
+        <div class="compare">
+          <div class="cmp-row"><span>자체 구매 시 연간 비용 (추정)</span><s id="r-buy">-</s></div>
+          <div class="cmp-dsit"><span>DSIT 렌탈 서비스</span><strong id="r-rent">-</strong></div>
+          <div class="save-line"><span id="r-save-label">연간 예상 절감액</span><strong id="r-save">-</strong></div>
+        </div>
+      </div>
+      <p class="hs-note" id="r-hs" hidden>이 정도 출력량은 고속 복합기가 적합합니다. 브랜드·스펙에 따라 요금이 달라 상담 후 정확히 안내해 드립니다.</p>
+
+      <button type="button" class="sim-cta" id="sim-cta">이 조건으로 상담 신청
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="sim-disc">표시 금액은 입력한 출력량을 기준으로 한 예상치이며, 실제 요금은 설치 환경과 계약 조건에 따라 상담 후 확정됩니다. 자체 구매 비용은 기기 구입비를 5년에 나눠 반영하고 토너·수리비를 더한 추정치입니다.</p>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section id="process">
   <div class="wrap">
@@ -745,6 +853,99 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
       .catch(function(){say('접수 중 문제가 생겼습니다. 대표전화 055-920-5551로 연락 주세요.',true);})
       .then(function(){submitBtn.disabled=false;});
   });
+
+  /* ===== 렌탈 견적 시뮬레이터 =====
+     DSIT 요금제 (단위: 원, 기기 1대 기준). 요금제를 추가·수정하려면 아래 목록만 고치면 됩니다. */
+  var PRICE = {
+    mono: [                                   // 흑백 복합기: 월 흑백 포함 매수 → 월 렌탈료
+      { mono: 3000,  price: [80000] },
+      { mono: 5000,  price: [90000] },
+      { mono: 7000,  price: [100000] },
+      { mono: 10000, price: [120000] }
+    ],
+    color: [                                  // 컬러 복합기: 흑백 / 컬러 포함 매수 → 월 렌탈료 (범위는 [최소, 최대])
+      { mono: 2000, color: 200,  price: [90000, 100000] },
+      { mono: 3000, color: 500,  price: [120000] },
+      { mono: 5000, color: 1000, price: [150000] }
+    ],
+    extra: {                                  // 요금표를 넘는 출력량 추정: 마지막 요금제 + 초과 1매당 금액
+      mono:  { mono: 7 },                     // 흑백기: 7,000→10,000매 구간 증가폭(3,000매당 2만원) 기준
+      color: { mono: 7, color: 30 }           // 컬러기: 3,000/500→5,000/1,000 구간 증가폭(3만원) 기준
+    },
+    highspeedMono: 15000,                     // 1대당 월 흑백이 이 이상이면 고속 복합기 추천
+    buy: {                                    // 자체 구매 비교용 추정치 (기기값 5년 분할 + 토너 1매당 + 연간 유지보수)
+      years: 5,
+      mono:  { price: 2500000, tonerMono: 10, repairYear: 700000 },
+      color: { price: 3000000, tonerMono: 10, tonerColor: 60, repairYear: 750000 }
+    }
+  };
+
+  var sm=document.getElementById('s-mono'), sc=document.getElementById('s-color'), units=1, last=null;
+  var imgs={
+    mono:document.querySelector('img[alt="FUJIFILM Apeos 3060 흑백 복합기"]'),
+    color:document.querySelector('img[alt="FUJIFILM Apeos C2560 컬러 복합기"]'),
+    highspeed:document.querySelector('img[alt="FUJIFILM Apeos C3570 고속 복합기"]')
+  };
+  var INFO={mono:['흑백 복합기','소규모 사무실 · 문서 위주'],color:['컬러 복합기','일반 사무실 · 컬러 자료'],highspeed:['고속 복합기','대량 출력 · 기관·학교']};
+  function num(n){return Math.round(n).toLocaleString('ko-KR');}
+  function man(w){var m=w/10000;return (m>=100?num(m):(Math.round(m*10)/10).toLocaleString('ko-KR'));}
+  function fill(el,color){var p=(el.value-el.min)/(el.max-el.min)*100;el.style.background='linear-gradient(90deg,'+color+' '+p+'%,rgba(255,255,255,.12) '+p+'%)';}
+  function $s(id){return document.getElementById(id);}
+  function consult(t){$s('r-priced').hidden=true;$s('r-hs').hidden=false;$s('r-hs').textContent=t;}
+
+  function calc(){
+    var mono=+sm.value, color=+sc.value;
+    $s('o-mono').innerHTML=num(mono)+'<small>매</small>';
+    $s('o-color').innerHTML=num(color)+'<small>매</small>';
+    fill(sm,'#27C4E8'); fill(sc,'#E4448F');
+    var m=Math.ceil(mono/units), c=Math.ceil(color/units);
+    var kind = m>=PRICE.highspeedMono ? 'highspeed' : (color>0 ? 'color' : 'mono');
+    $s('r-name').textContent=INFO[kind][0]; $s('r-desc').textContent=INFO[kind][1]+' · '+units+'대';
+    if(imgs[kind]){$s('r-img').src=imgs[kind].src;$s('r-img').alt=INFO[kind][0];}
+    last={mono:mono,color:color,units:units,kind:kind,plan:null};
+
+    if(kind==='highspeed'){consult('이 정도 출력량은 고속 복합기가 적합합니다. 브랜드·스펙에 따라 요금이 달라 상담 후 정확히 안내해 드립니다.');return;}
+    var list=PRICE[kind], plan=list.filter(function(p){return m<=p.mono&&(kind==='mono'||c<=p.color);})[0], est=false;
+    if(!plan){                              // 요금표 초과 → 마지막 요금제 + 초과분으로 추정
+      var top=list[list.length-1], x=PRICE.extra[kind];
+      var add=Math.max(0,m-top.mono)*x.mono+(kind==='color'?Math.max(0,c-top.color)*x.color:0);
+      add=Math.ceil(add/1000)*1000;
+      plan={mono:top.mono,color:top.color,price:[top.price[0]+add]}; est=true;
+    }
+    $s('r-priced').hidden=false;$s('r-hs').hidden=true;
+
+    var lo=plan.price[0]*units, hi=(plan.price[1]||plan.price[0])*units, mid=(lo+hi)/2;
+    $s('r-month').innerHTML=(est?'약 ':'')+(lo===hi?man(lo):man(lo)+' ~ '+man(hi))+'<em>만원</em>';
+    var base=kind==='mono' ? '흑백 '+num(plan.mono)+'매' : '흑백 '+num(plan.mono)+' / 컬러 '+num(plan.color)+'매';
+    $s('r-plan').textContent=est ? '1대당 '+base+' 요금제 + 초과분 추정 (상담 시 확정)' : '1대당 '+base+' 포함 요금제';
+
+    var rentYear=mid*12;
+    var b=PRICE.buy[kind], buyPer=b.price/PRICE.buy.years+b.repairYear+m*12*b.tonerMono+(kind==='color'?c*12*b.tonerColor:0);
+    var buyYear=buyPer*units, save=buyYear-rentYear;
+    $s('r-buy').textContent=man(buyYear)+'만원/연간';
+    $s('r-rent').textContent=man(rentYear)+'만원/연간';
+    if(save>0){$s('r-save-label').textContent='연간 예상 절감액';$s('r-save').textContent='약 '+man(save)+'만원';}
+    else{$s('r-save-label').textContent='비용 차이';$s('r-save').textContent='비슷한 수준';}
+    last.plan=$s('r-plan').textContent; last.month=(est?'약 ':'')+(lo===hi?man(lo)+'만원':man(lo)+' ~ '+man(hi)+'만원');
+  }
+  sm.addEventListener('input',calc); sc.addEventListener('input',calc);
+  document.querySelectorAll('.units button').forEach(function(bt){
+    bt.addEventListener('click',function(){
+      document.querySelectorAll('.units button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+      bt.setAttribute('aria-pressed','true'); units=+bt.dataset.u; calc();
+    });
+  });
+  $s('sim-cta').addEventListener('click',function(){
+    if(!last)return;
+    var lines=['[견적 시뮬레이터]','월 흑백 '+num(last.mono)+'매 / 컬러 '+num(last.color)+'매 / 기기 '+last.units+'대','추천 장비: '+INFO[last.kind][0]];
+    if(last.plan){lines.push('적용 요금제: '+last.plan);lines.push('예상 월 렌탈료: '+last.month);}
+    else{lines.push('맞춤 견적 요청');}
+    $s('f-type').value='복합기 렌탈';
+    $s('f-msg').value=lines.join('\n')+'\n\n';
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    setTimeout(function(){var f=$s('f-name');f.focus({preventScroll:true});var fm=$s('form');fm.classList.remove('flash');void fm.offsetWidth;fm.classList.add('flash');},700);
+  });
+  calc();
   document.getElementById('yr').textContent=new Date().getFullYear();
 })();
 </script>
