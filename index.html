@@ -328,6 +328,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
 .save-line span{font-size:14px;font-weight:600}
 .save-line strong{font:700 24px/1 var(--font-en);color:var(--cyan)}
 .hs-note{padding:26px 0 8px;color:rgba(255,255,255,.75);font-size:15px}
+.sim-extra{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:grid;gap:18px}
+.sim-q-label{display:block;font-size:13.5px;font-weight:600;margin-bottom:10px}
+.sim-q-label small{font-weight:400;color:rgba(255,255,255,.5);margin-left:6px;font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{height:38px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:rgba(255,255,255,.78);font:500 13.5px/1 var(--font-kr);cursor:pointer;transition:all .2s}
+.chips button:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.chips button[aria-pressed=true]{background:rgba(39,196,232,.18);border-color:var(--cyan);color:#fff}
+.chips button[aria-pressed=true]::before{content:"✓ ";color:var(--cyan)}
 .sim-cta{margin-top:24px;width:100%;height:56px;border-radius:12px;border:0;background:#fff;color:var(--navy);font:700 16px/1 var(--font-kr);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s}
 .sim-cta:hover{transform:translateY(-2px)}
 .sim-disc{margin:14px 0 0;font-size:12px;color:rgba(255,255,255,.45);line-height:1.6}
@@ -625,7 +633,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
     <div>
       <div class="eyebrow">RENTAL SIMULATOR</div>
       <h2>우리 사무실 예상 비용,<br>바로 계산해 보세요.</h2>
-      <p class="sim-lead">출력량과 기기 수를 움직이면 맞는 장비와 예상 렌탈료, 자체 구매 대비 비용을 바로 보여드립니다.</p>
+      <p class="sim-lead">출력량이 추정이 어렵다면, 월평균 소비하는 A4 용지 박스(2,500매)를 기준으로 계산해 보세요.</p>
 
       <div class="sim-field">
         <div class="sim-field-head"><label for="s-mono">월 흑백 출력량</label><output id="o-mono">2,000<small>매</small></output></div>
@@ -665,6 +673,26 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
         </div>
       </div>
       <p class="hs-note" id="r-hs" hidden>이 정도 출력량은 고속 복합기가 적합합니다. 브랜드·스펙에 따라 요금이 달라 상담 후 정확히 안내해 드립니다.</p>
+
+      <div class="sim-extra">
+        <div class="sim-q">
+          <span class="sim-q-label">주요 출력물 <small>중복 선택 가능</small></span>
+          <div class="chips" id="c-doc" data-multi="1">
+            <button type="button" aria-pressed="false">일반 문서(텍스트)</button>
+            <button type="button" aria-pressed="false">사진·사진 포함 문서</button>
+            <button type="button" aria-pressed="false">도면</button>
+            <button type="button" aria-pressed="false">PPT</button>
+          </div>
+        </div>
+        <div class="sim-q">
+          <span class="sim-q-label">연결할 PC 대수</span>
+          <div class="chips" id="c-pc">
+            <button type="button" aria-pressed="false">5대 미만</button>
+            <button type="button" aria-pressed="false">5~10대</button>
+            <button type="button" aria-pressed="false">10대 이상</button>
+          </div>
+        </div>
+      </div>
 
       <button type="button" class="sim-cta" id="sim-cta">이 조건으로 상담 신청
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -935,11 +963,24 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
       bt.setAttribute('aria-pressed','true'); units=+bt.dataset.u; calc();
     });
   });
+  document.querySelectorAll('.chips').forEach(function(g){
+    g.querySelectorAll('button').forEach(function(bt){
+      bt.addEventListener('click',function(){
+        var on=bt.getAttribute('aria-pressed')==='true';
+        if(!g.dataset.multi){g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});}
+        bt.setAttribute('aria-pressed',on&&g.dataset.multi?'false':(on?'false':'true'));
+      });
+    });
+  });
+  function picked(id){return Array.prototype.map.call(document.querySelectorAll('#'+id+' button[aria-pressed=true]'),function(b){return b.textContent;});}
   $s('sim-cta').addEventListener('click',function(){
     if(!last)return;
     var lines=['[견적 시뮬레이터]','월 흑백 '+num(last.mono)+'매 / 컬러 '+num(last.color)+'매 / 기기 '+last.units+'대','추천 장비: '+INFO[last.kind][0]];
     if(last.plan){lines.push('적용 요금제: '+last.plan);lines.push('예상 월 렌탈료: '+last.month);}
     else{lines.push('맞춤 견적 요청');}
+    var docs=picked('c-doc'), pc=picked('c-pc');
+    if(docs.length)lines.push('주요 출력물: '+docs.join(', '));
+    if(pc.length)lines.push('연결 PC: '+pc[0]);
     $s('f-type').value='복합기 렌탈';
     $s('f-msg').value=lines.join('\n')+'\n\n';
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
