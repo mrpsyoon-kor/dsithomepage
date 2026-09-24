@@ -363,7 +363,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
 .btn-pill{white-space:nowrap}
 @media (max-width:1320px){.header .logo>span{display:none}.nav{gap:24px}}
 @media (max-width:1240px){.nav{gap:20px;font-size:14.5px}.head-cta .btn-pill svg{display:none}}
-@media (max-width:600px){.ph{height:190px}}
+@media (max-width:600px){.tp{height:180px}.tp:first-child{height:220px}}
 .biz .kicker{display:inline-block;margin-top:22px;font:600 11.5px/1 var(--font-en);letter-spacing:.12em;color:var(--orange)}
 .biz .kicker+h3{margin-top:8px}
 .price-note{margin:18px 0 0;font-size:13.5px;color:var(--muted)}
@@ -379,9 +379,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
 .ph svg{width:36px;height:36px;opacity:.6}
 .ph b{font-size:14.5px;color:var(--ink);font-weight:600}
 .ph small{font-size:12.5px}
-.trust-row{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
-.trust-row h3{margin:0 0 16px;font-size:20px;font-weight:700}
-.clients{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.trust-row{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.tp{margin:0;position:relative;height:280px;border-radius:18px;overflow:hidden;background:var(--navy)}
+.tp img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.tp:hover img{transform:scale(1.04)}
+.tp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,17,42,0) 55%,rgba(7,17,42,.72));pointer-events:none}
+.tp figcaption{position:absolute;left:20px;bottom:16px;z-index:1;color:#fff;font-size:15px;font-weight:600;display:flex;align-items:center;gap:10px}
+.tp figcaption::before{content:"";width:18px;height:2px;background:var(--cyan)}
+.trust-row h3{margin:0 0 18px;font-size:20px;font-weight:700}
+.clients{display:flex;flex-wrap:wrap;gap:10px}
 .clients span{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-size:14.5px;font-weight:500}
 .trust-nums{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .trust-nums div{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--bg)}
@@ -398,7 +404,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
   .call-float{display:flex}
   .head-cta .btn-as{height:38px;padding:0 12px;font-size:13px}
   .trust-photos{grid-template-columns:1fr 1fr}
-  .trust-photos .ph:first-child{grid-column:1/-1}
+  .trust-photos .tp:first-child{grid-column:1/-1}
+  .tp{height:220px}
   .trust-row{grid-template-columns:1fr;gap:36px}
 }
 @media (max-width:1080px){
@@ -838,26 +845,18 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
       <p>설치부터 점검, A/S까지 DSIT 엔지니어가 직접 방문합니다. 가까이 있어서 빠르고, 직접 관리해서 믿을 수 있습니다.</p>
     </div>
     <div class="trust-photos">
-      <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>엔지니어 설치·점검 모습</b><small>사진 준비 중 · 가로형 4:3 권장</small></div>
-      <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>DSIT 서비스 차량</b><small>사진 준비 중</small></div>
-      <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>사무실·부품 창고</b><small>사진 준비 중</small></div>
+      <figure class="tp"><img src="images/site-repair.webp" alt="DSIT 엔지니어 현장 점검·수리" loading="lazy"><figcaption>현장 점검·수리</figcaption></figure>
+      <figure class="tp"><img src="images/site-delivery.webp" alt="DSIT 소모품 직접 배송" loading="lazy"><figcaption>소모품 직접 배송</figcaption></figure>
+      <figure class="tp"><img src="images/site-office.webp" alt="DSIT 진주 사무실 전경" loading="lazy"><figcaption>진주 사무실</figcaption></figure>
     </div>
     <div class="trust-row">
       <div>
-        <h3>이런 곳들이 DSIT와 함께합니다</h3>
-        <div class="clients"><span>관공서</span><span>학원</span><span>공동주택 관리사무소</span><span>건축사무소</span><span>일반 사무실</span><span class="tbd">업종 추가 확인</span></div>
-        <div class="trust-nums">
-          <div><b>300<sup>+</sup></b><span>관리 중인 장비</span></div>
-          <div><b><span class="tbd">○○</span></b><span>거래처 수 (확인 필요)</span></div>
-        </div>
+        <h3>다양한 고객사가 DSIT와 함께합니다</h3>
+        <div class="clients"><span>관공서</span><span>학원</span><span>공동주택 관리사무소</span><span>건축사무소</span><span>일반 사무실</span><span>개인사무실</span><span>행사현장</span></div>
       </div>
-      <div>
-        <h3>고객 후기</h3>
-        <div class="reviews">
-          <div class="review"><p>[고객 후기 한두 문장이 들어갈 자리입니다]</p><cite>[업종 · 고객명 · 진주시]</cite></div>
-          <div class="review"><p>[고객 후기 한두 문장이 들어갈 자리입니다]</p><cite>[업종 · 고객명 · 진주시]</cite></div>
-          <div class="review"><p>[고객 후기 한두 문장이 들어갈 자리입니다]</p><cite>[업종 · 고객명 · 경남]</cite></div>
-        </div>
+      <div class="trust-nums">
+        <div><b>300<sup>+</sup></b><span>관리 중인 장비</span></div>
+        <div><b>경남전역</b><span>서비스 지역</span></div>
       </div>
     </div>
   </div>
@@ -928,7 +927,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
   <div class="wrap foot">
     <div>
       <div class="logo"><img src="images/logo.webp" alt="디에스아이티 로고" class="logo-img logo-img-foot"></div>
-      <p>상호 DSIT(디에스아이티) | 대표 <span class="tbd">대표자명</span> | 사업자등록번호 456-23-01701</p>
+      <p>상호 DSIT(디에스아이티) | 대표 김상현 | 사업자등록번호 456-23-01701</p>
       <p>주소 경상남도 진주시 충무공동69-3 윙스타워B동 1410호</p>
       <p>전화 <a href="tel:0559205551" data-track="call">055-920-5551</a> | 이메일 dsit2024@naver.com</p>
       <div class="foot-links"><a href="privacy.html" target="_blank" rel="noopener"><strong>개인정보 처리방침</strong></a><a href="products.html">렌탈 상품</a><a href="help.html" target="_blank" rel="noopener">복합기 도움말</a></div>
