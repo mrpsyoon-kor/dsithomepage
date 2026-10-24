@@ -464,6 +464,33 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .paper{transform:none}
 }
+
+/* ---------- technology (제로그래피) ---------- */
+.tech{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.tech::before{content:"";position:absolute;width:560px;height:560px;left:-220px;top:-200px;border-radius:50%;background:rgba(39,196,232,.16);filter:blur(110px)}
+.tech .wrap{position:relative}
+.tech .eyebrow{color:var(--cyan)}
+.tech .sec-head{margin-bottom:40px}
+.tech .sec-head p{color:rgba(255,255,255,.7)}
+.tech .xg-frame{max-width:760px;margin:0 auto}.tech .xg-steps,.tech .xg-desc,.tech-cta,.tech-note{max-width:760px;margin-left:auto;margin-right:auto}.tech .xg-step small{display:none}.tech .xg-step{padding:12px 14px}.tech .xg-step span{margin-top:4px;font-size:15px}.tech .xg-desc{min-height:0;margin-top:12px;font-size:14.5px}.tech-cta{justify-content:center}.tech-note{text-align:center}
+.tech-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.tech-note{margin:18px 0 0;font-size:13px;color:rgba(255,255,255,.45)}
+@media (max-width:600px){.tech-cta .btn{flex:1 1 100%}}
+
+.xg-frame{display:block;width:100%;aspect-ratio:1100/760;border:0;border-radius:16px;background:#07112A}
+.xg-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:18px}
+.xg-step{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff;font-family:inherit;text-align:left;cursor:pointer;transition:background .2s,border-color .2s}
+.xg-step:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3)}
+.xg-step b{font:600 12px/1 var(--font-en);color:var(--cyan);letter-spacing:.08em}
+.xg-step span{font-size:16px;font-weight:600;margin-top:6px}
+.xg-step small{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.45}
+.xg-step.on{background:rgba(75,227,166,.12);border-color:#4BE3A6}
+.xg-step.on b{color:#4BE3A6}
+.xg-desc{margin:16px 0 0;min-height:3.3em;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.78);font-size:15px;line-height:1.65}
+.xg-desc strong{color:#4BE3A6;margin-right:6px}
+@media (max-width:1080px){.xg-steps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.xg-steps{grid-template-columns:repeat(2,1fr);gap:8px}.xg-step{padding:12px 14px}.xg-step span{font-size:15px}.xg-desc{font-size:14px}}
+.help-more{margin:16px 0 0;font-size:14px}.help-more a{color:var(--cyan-ink);font-weight:600}
 </style>
 </head>
 <body>
@@ -494,7 +521,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
     </div>
   </div>
   <nav class="mobile-nav" id="mnav" aria-label="모바일 메뉴">
-    <a href="#about">회사소개</a><a href="#business">사업영역</a><a href="#products">렌탈상품</a>
+    <a href="#about">회사소개</a><a href="#business">사업영역</a><a href="#tech">기술력</a><a href="#products">렌탈상품</a>
     <a href="#simulator">견적계산</a><a href="#smart">스마트관리</a><a href="#support">고객지원</a><a href="#contact">상담문의</a>
   </nav>
 </header>
@@ -636,6 +663,27 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
       </article>
     </div>
     <p class="brand-note">후지필름 비즈니스 이노베이션(FUJIFILM Business Innovation)을 비롯한 주요 브랜드 복합기를 취급합니다.</p>
+  </div>
+</section>
+
+<!-- TECHNOLOGY : 제로그래피 도면 (xerography-engine.html) -->
+<section class="tech" id="tech">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">TECHNOLOGY</div>
+        <h2>같은 증상, 다른 진단.<br>차이는 기술력입니다.</h2>
+      </div>
+      <p>겉으로 드러나는 증상은 같아도 원인은 다를 수 있습니다. 제로그래피의 작동 원리를 기반으로 문제를 체계적으로 분석하고 정확한 해결 방향을 제시합니다.</p>
+    </div>
+    <iframe class="xg-frame" data-xg src="xerography-engine.html?embed=1" loading="lazy" title="컬러 복합기 내부 구조 인터랙티브 도면"></iframe>
+    <div class="xg-steps"><button type="button" class="xg-step" data-i="0" aria-pressed="false"><b>01</b><span>대전</span><small>드럼 표면에 전기를 고르게</small></button><button type="button" class="xg-step" data-i="1" aria-pressed="false"><b>02</b><span>노광</span><small>레이저로 글자 모양 새기기</small></button><button type="button" class="xg-step" data-i="2" aria-pressed="false"><b>03</b><span>현상</span><small>글자 모양에 토너 묻히기</small></button><button type="button" class="xg-step" data-i="3" aria-pressed="false"><b>04</b><span>전사</span><small>토너를 벨트 → 종이로</small></button><button type="button" class="xg-step" data-i="4" aria-pressed="false"><b>05</b><span>정착</span><small>열과 압력으로 굳히기</small></button><button type="button" class="xg-step" data-i="5" aria-pressed="false"><b>06</b><span>클리닝</span><small>남은 토너 정리</small></button></div>
+    <p class="xg-desc" id="xg-desc" aria-live="polite">단계를 누르면 해당 부품이 표시됩니다.</p>
+    <div class="tech-cta">
+      <a href="how-it-works.html#symptoms" class="btn btn-primary">증상으로 원인 찾기</a>
+      <a href="how-it-works.html" class="btn btn-ghost">작동 원리 자세히 보기</a>
+    </div>
+    <p class="tech-note">※ 일반적인 탠덤 방식 컬러 복합기 구조 도면입니다.</p>
   </div>
 </section>
 
@@ -885,6 +933,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
           <li>용지 걸림</li><li>인쇄가 흐림</li><li>스캔이 안 됨</li><li>PC에서 인쇄 안 됨</li><li>오류 메시지</li><li>토너 교체</li>
         </ul>
         <a href="help.html" class="btn btn-primary" target="_blank" rel="noopener">도움말 열기</a>
+        <p class="help-more"><a href="how-it-works.html#symptoms">왜 이런 증상이 생길까요? 증상별 원인 보기 →</a></p>
       </div>
       <div class="faq">
         <details open><summary>렌탈료에는 무엇이 포함되나요?</summary><p>장비 사용료, 토너 등 기본 소모품, 정기 점검과 A/S 출장비가 포함됩니다. <br class="soft-break">용지와 기본 매수를 초과한 출력분은 계약 조건에 따라 별도로 안내해 드립니다.</p></details>
@@ -938,7 +987,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
       <p>상호 DSIT(디에스아이티) | 대표 김상현 | 사업자등록번호 456-23-01701</p>
       <p>주소 경상남도 진주시 충무공동69-3 윙스타워B동 1410호</p>
       <p>전화 <a href="tel:0559205551" data-track="call">055-920-5551</a> | 이메일 dsit2024@naver.com</p>
-      <div class="foot-links"><a href="privacy.html" target="_blank" rel="noopener"><strong>개인정보 처리방침</strong></a><a href="products.html">렌탈 상품</a><a href="guide.html">복합기 임대 가이드</a><a href="help.html" target="_blank" rel="noopener">복합기 도움말</a></div>
+      <div class="foot-links"><a href="privacy.html" target="_blank" rel="noopener"><strong>개인정보 처리방침</strong></a><a href="products.html">렌탈 상품</a><a href="guide.html">복합기 임대 가이드</a><a href="how-it-works.html">복합기 작동 원리</a><a href="help.html" target="_blank" rel="noopener">복합기 도움말</a></div>
       <p style="margin-top:18px">© <span id="yr">2026</span> DSIT. All rights reserved.</p>
     </div>
     <div class="foot-tag">SMILE · SMART · SPEED</div>
@@ -1121,7 +1170,45 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;fon
     if(preset){sm.value=preset[0];sc.value=preset[1];calc();}
     if(PRESET_MODEL&&!preset){var m=document.getElementById('f-msg');m.value='관심 모델: '+PRESET_MODEL+'\n';}
   })();
+
+  /* ===== 작동 원리 페이지에서 A/S 접수로 넘어올 때 (?as=증상) ===== */
+  (function(){
+    var v=new URLSearchParams(location.search).get('as'); if(v===null) return;
+    document.getElementById('f-type').value='A/S 접수';
+    document.getElementById('f-msg').value='모델명(또는 설치 위치): \n증상: '+v+'\n';
+  })();
   document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+<script>
+var XG_STEPS=[{"name": "대전", "desc": "대전 롤러가 감광 드럼 표면을 약 −600 V로 고르게 대전합니다. 대전이 고르지 않으면 바탕이 지저분해지거나 농도가 들쭉날쭉해집니다.", "focus": {"target": -1, "parts": ["chg0", "chg1", "chg2", "chg3"], "label": "대전 롤러", "text": "① 대전 · 드럼 표면 약 −600 V"}}, {"name": "노광", "desc": "레이저 유닛이 인쇄할 부분만 약 −100 V로 방전해, 눈에 보이지 않는 그림(정전잠상)을 드럼에 새깁니다. 레이저 창이 오염되면 특정 색에 흰 줄이 생길 수 있습니다.", "focus": {"target": -1, "parts": ["poly0", "poly1", "poly2", "poly3"], "label": "레이저 유닛", "text": "② 노광 · 인쇄할 부분만 약 −100 V"}}, {"name": "현상", "desc": "현상기가 (−)전기를 띤 토너를 방전된 부분에만 붙입니다. 토너가 부족하거나 현상기에 문제가 있으면 해당 색이 흐리게 나옵니다.", "focus": {"target": -1, "parts": ["mag0", "mag1", "mag2", "mag3"], "label": "현상기", "text": "③ 현상 · 방전된 부분에 토너 부착"}}, {"name": "전사", "desc": "노랑·마젠타·시안·검정 토너가 중간 전사 벨트 위에 차례로 겹쳐진 뒤, 2차 전사 롤러에서 한 번에 용지로 옮겨집니다. 벨트나 롤러 위치가 틀어지면 색이 어긋나 보입니다.", "focus": {"target": -1, "parts": ["ptr0", "ptr1", "ptr2", "ptr3", "blt0", "blt1", "str"], "label": "중간 전사 벨트", "text": "④ 전사 · 4색을 벨트에 겹쳐 용지로"}}, {"name": "정착", "desc": "약 170 ℃의 가열 롤러와 가압 롤러가 토너를 녹여 종이에 고정합니다. 정착이 약하면 손으로 문질렀을 때 번지거나 가루가 묻어납니다.", "focus": {"target": 4, "parts": ["hot", "prs"], "label": "정착기", "text": "⑤ 정착 · 약 170 ℃ 열 + 압력"}}, {"name": "클리닝", "desc": "클리너 블레이드가 드럼에 남은 토너를 긁어내 다음 장을 준비합니다. 블레이드가 닳으면 인쇄물에 세로 줄이 생깁니다.", "focus": {"target": -1, "parts": ["drum0", "drum1", "drum2", "drum3"], "label": "감광 드럼 · 클리너", "text": "⑥ 클리닝 · 드럼에 남은 토너 제거"}}];
+(function(){
+  var fr=document.querySelector('iframe[data-xg]'); if(!fr) return;
+  var last=null;
+  function send(m){ try{fr.contentWindow.postMessage(m,'*');}catch(e){} }
+  addEventListener('message',function(e){
+    if(e.source!==fr.contentWindow) return; var d=e.data||{};
+    if(d.dsitReady && last) send(last);
+    if(d.dsitH){ fr.style.height=d.dsitH+'px'; fr.style.aspectRatio='auto'; }
+    if(d.dsitUser){ last=null; if(window.xgOnUser) window.xgOnUser(); }
+  });
+  window.xgFocus=function(o){ var m={dsit:'focus'}; for(var k in o) m[k]=o[k]; last=m; send(m); };
+  window.xgTour=function(){ last=null; send({dsit:'tour'}); };
+})();
+
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.xg-step')), out=document.getElementById('xg-desc'), cur=-1, hint=out?out.innerHTML:'';
+  function clear(){ cur=-1; btns.forEach(function(b){b.classList.remove('on');b.setAttribute('aria-pressed','false');}); if(out) out.innerHTML=hint; }
+  var prevUser=window.xgOnUser; window.xgOnUser=function(){ clear(); if(prevUser) prevUser(); };
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var i=+b.dataset.i;
+    if(i===cur){ clear(); window.xgTour(); return; }
+    if(window.xgClearOthers) window.xgClearOthers('steps');
+    cur=i; btns.forEach(function(x){var on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false');});
+    var s=XG_STEPS[i]; if(out) out.innerHTML='<strong>'+String(i+1).padStart(2,'0')+' '+s.name+'</strong> '+s.desc.split('. ')[0].replace(/\.$/,'')+'.';
+    window.xgFocus(s.focus);
+  });});
+  window.xgClearSteps=clear;
 })();
 </script>
 </body>

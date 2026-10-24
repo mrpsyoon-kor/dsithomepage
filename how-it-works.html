@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>복합기 작동 원리와 고장 증상별 원인 | 컬러 복합기 구조 - DSIT</title>
+<meta name="description" content="세로 줄, 색 빠짐, 번짐, 흐림, 색 어긋남. 컬러 복합기(복사기) 고장 증상이 어느 부품에서 생기는지 제로그래피 원리 도면으로 확인하세요. 진주·사천 복합기 A/S DSIT.">
+<link rel="canonical" href="https://www.dsit1.com/how-it-works.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="복합기 작동 원리와 고장 증상별 원인 | DSIT">
+<meta property="og:description" content="복합기 고장 증상이 어느 부품에서 생기는지 도면으로 확인하세요.">
+<meta property="og:url" content="https://www.dsit1.com/how-it-works.html">
+<meta property="og:image" content="https://www.dsit1.com/og-image.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "복합기 인쇄물에 세로 줄이 생기는 원인은?", "acceptedAnswer": {"@type": "Answer", "text": "주로 감광 드럼 표면 흠집·오염, 클리너 블레이드 마모 때문입니다. 대전 롤러 오염, 중간 전사 벨트 흠집, 정착 롤러 표면 손상, 복사할 때만 생긴다면 원고 유리(스캐너) 오염도 함께 점검해야 할 수 있습니다. PC 인쇄물과 복사본을 비교해 보세요. 복사할 때만 줄이 생기면 원고 유리와 자동급지 쪽 좁은 띠 유리를 부드러운 천으로 닦아 보세요."}}, {"@type": "Question", "name": "컬러 복합기에서 특정 색만 안 나오거나 흐린 원인은?", "acceptedAnswer": {"@type": "Answer", "text": "주로 해당 색 토너 부족, 해당 색 현상기, 해당 색 감광 드럼 때문입니다. 레이저 유닛 창 오염, 1차 전사 롤러, PC 인쇄 설정(흑백·토너 절약 모드)도 함께 점검해야 할 수 있습니다. 복합기 화면에서 해당 색의 토너 잔량을 확인해 보세요."}}, {"@type": "Question", "name": "복합기 인쇄물을 문지르면 번지는 원인은?", "acceptedAnswer": {"@type": "Answer", "text": "주로 정착기 (가열 롤러·가압 롤러) 때문입니다. 용지 종류 설정과 실제 용지가 다른 경우, 습기를 먹은 용지, 두꺼운 용지·라벨지 사용도 함께 점검해야 할 수 있습니다. 습기 없는 새 용지로 다시 출력해 보세요."}}, {"@type": "Question", "name": "복합기 인쇄가 전체적으로 연하게 나오는 원인은?", "acceptedAnswer": {"@type": "Answer", "text": "주로 토너 잔량, 대전 롤러, 2차 전사 롤러 때문입니다. 인쇄 농도·토너 절약 설정, 습한 설치 환경, 감광 드럼 수명도 함께 점검해야 할 수 있습니다. 토너 잔량과 인쇄 농도·토너 절약 설정을 확인해 보세요."}}, {"@type": "Question", "name": "컬러 복합기 인쇄물의 색이 어긋나 보이는 원인은?", "acceptedAnswer": {"@type": "Answer", "text": "주로 중간 전사 벨트, 색 위치 보정(컬러 레지스트레이션) 때문입니다. 드럼 구동 기어 마모, 1차 전사 롤러, 장비를 옮긴 뒤 수평이 틀어진 경우도 함께 점검해야 할 수 있습니다. 복합기 메뉴에 '색 위치 보정(컬러 레지스트레이션)' 기능이 있다면 실행해 보세요."}}]}</script>
+<style>
+:root{
+  --navy:#07112A; --navy-2:#0C1B3D; --navy-3:#13264F;
+  --cyan:#27C4E8; --cyan-ink:#06789A; --magenta:#E4448F; --yellow:#F2C230;
+  --bg:#F2F5F9; --surface:#FFFFFF; --ink:#0D1830; --muted:#566781; --line:#DCE3EC;
+  --chip:#E3F5FB; --chip-ink:#05708F;
+  --font-kr:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --font-en:"Sora","IBM Plex Sans KR","Malgun Gothic",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0A1430;--surface:#101D3F;--ink:#E8EEF7;--muted:#9DAAC2;--line:#22335C;--chip:#123150;--chip-ink:#86E0F4;--cyan-ink:#5ED3EF}
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;font-family:var(--font-kr);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,17,42,.86);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px}
+.logo-img{height:30px;width:auto;display:block}
+.logo span small{display:block;font:500 11px/1 var(--font-en);color:rgba(255,255,255,.55);letter-spacing:.08em;margin-top:4px}
+.head-cta{display:flex;gap:10px;align-items:center;font-size:14px}
+.head-cta a{color:rgba(255,255,255,.82)}
+.head-cta a:hover{color:var(--cyan)}
+.btn-pill{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,255,255,.28);color:#fff;font-size:14px;font-weight:600;background:rgba(255,255,255,.04)}
+.btn-pill:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+
+.shop-hero{background:var(--navy);color:#fff;padding:52px 0 36px}
+.crumb{font-size:13px;color:rgba(255,255,255,.55)}
+.crumb a{color:rgba(255,255,255,.8)}
+.crumb a:hover{color:var(--cyan)}
+.shop-hero h1{margin:14px 0 10px;font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.03em}
+.shop-hero p{margin:0;color:rgba(255,255,255,.68);max-width:38em}
+
+.tabs-nav{position:sticky;top:76px;z-index:40;background:var(--surface);border-bottom:1px solid var(--line)}
+.tabs-nav .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:14px;padding-bottom:14px}
+.tab-btn{flex:none;padding:9px 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600;color:var(--muted);background:var(--bg);white-space:nowrap}
+.tab-btn:hover{color:var(--cyan-ink);border-color:var(--cyan-ink)}
+
+.shop-cat{padding:64px 0}
+.shop-cat:nth-child(even){background:var(--surface)}
+.cat-head{margin-bottom:34px}
+.cat-eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--font-en);letter-spacing:.2em;color:var(--cyan-ink)}
+.cat-eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+.cat-head h2{margin:14px 0 6px;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.02em}
+.cat-head p{margin:0;color:var(--muted);font-size:15px}
+
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.shop-card{border:1px solid var(--line);border-radius:18px;background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
+.shop-cat:nth-child(even) .shop-card{background:var(--surface)}
+.shop-card .thumb{height:190px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#F5F8FB,#E9EFF5);position:relative}
+.shop-card .thumb img{max-width:78%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(13,24,48,.14))}
+.shop-card .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.shop-card h3{margin:0 0 4px;font-size:17px;font-weight:600}
+.shop-card .spec{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.shop-card .price{font-size:13px;color:var(--muted);margin-top:auto}
+.shop-card .price strong{display:block;font-size:16px;color:var(--ink);margin-top:2px}
+.shop-card a.cta{margin-top:14px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--surface)}
+.shop-cat:nth-child(even) .shop-card a.cta{background:var(--bg)}
+.shop-card a.cta:hover{border-color:var(--cyan-ink);color:var(--cyan-ink)}
+
+/* placeholder (coming soon) card */
+.shop-card.placeholder .thumb{background:transparent;border:1.5px dashed var(--line);margin:16px 16px 0;border-radius:12px;height:158px}
+.shop-card.placeholder .thumb svg{width:46px;height:46px;color:var(--muted)}
+.shop-card.placeholder h3{color:var(--muted)}
+
+/* consult-only category (고속) */
+.consult-card{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:36px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.consult-card .thumb{width:140px;height:140px;flex:none;border-radius:14px;background:linear-gradient(180deg,#F5F8FB,#E9EFF5);display:flex;align-items:center;justify-content:center}
+.consult-card .thumb img{max-width:80%;max-height:80%;object-fit:contain}
+.consult-card .txt{flex:1;min-width:220px}
+.consult-card h3{margin:0 0 8px;font-size:18px;font-weight:600}
+.consult-card p{margin:0;color:var(--muted);font-size:14.5px}
+.consult-card a.cta{flex:none;height:48px;padding:0 26px;border-radius:10px;display:grid;place-items:center;font-size:14.5px;font-weight:600;background:var(--cyan);color:var(--navy)}
+
+.build-note{margin:0 0 40px;padding:16px 20px;border-radius:12px;background:var(--chip);color:var(--chip-ink);font-size:13.5px}
+
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 64px;font-size:13.5px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.foot .logo{color:#fff;margin-bottom:18px}
+.foot p{margin:4px 0}
+.foot-tag{font:600 12px/1 var(--font-en);letter-spacing:.24em;color:var(--cyan);align-self:flex-end}
+
+.kakao-float{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 12px;border-radius:999px;background:#FEE500;color:#191600;font-size:14px;font-weight:700;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+.kakao-float span{width:34px;height:34px;border-radius:50%;background:#191600;color:#FEE500;display:grid;place-items:center;font:700 14px/1 var(--font-en)}
+
+@media (max-width:920px){
+  .shop-grid{grid-template-columns:1fr 1fr}
+  .head-cta a:not(.btn-pill){display:none}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .shop-grid{grid-template-columns:1fr}
+  .shop-hero{padding:40px 0 28px}
+  .shop-cat{padding:44px 0}
+  .kakao-float span+em{display:none}
+  .consult-card{padding:26px}
+}
+.specs{margin:0 0 14px;display:grid;gap:6px;font-size:13px}
+.specs div{display:flex;justify-content:space-between;gap:10px;padding-top:6px;border-top:1px dashed var(--line)}
+.specs dt{color:var(--muted)}.specs dd{margin:0;font-weight:500;text-align:right}
+.tbd{display:inline-block;padding:1px 7px;border-radius:5px;background:rgba(242,194,48,.2);color:#9A6B00;font-size:.92em}
+.foot .tbd{color:#F5D267}
+.foot a{color:inherit;text-decoration:none}
+.foot-links{margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.foot-links a{color:rgba(255,255,255,.85)}
+.price-note{margin:10px 0 0;font-size:13px;color:rgba(255,255,255,.55)}
+.call-float{display:none;position:fixed;right:22px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:60;width:56px;height:56px;border-radius:50%;background:var(--cyan);color:var(--navy);align-items:center;justify-content:center;box-shadow:0 12px 30px -10px rgba(0,0,0,.45)}
+@media (max-width:920px){.call-float{display:flex}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 24px;border-radius:10px;font-size:15px;font-weight:600;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:var(--cyan);color:var(--navy);box-shadow:0 12px 32px -12px rgba(39,196,232,.7)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.04)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.shop-hero{padding:52px 0 8px}
+.bench{background:var(--navy);color:#fff;padding:28px 0 88px;position:relative;overflow:clip}
+.bench::before{content:"";position:absolute;width:620px;height:620px;right:-240px;top:-120px;border-radius:50%;background:rgba(39,196,232,.14);filter:blur(120px)}
+.bench-grid{position:relative;display:grid;grid-template-columns:1.45fr 1fr;gap:28px;align-items:start}
+.bench-stage{position:sticky;top:92px}
+.bench-note{margin:12px 2px 0;font-size:12.5px;color:rgba(255,255,255,.45)}
+.panel{border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.04);padding:8px 22px 24px;backdrop-filter:blur(10px)}
+.tabs{display:flex;gap:6px;padding:12px 0 18px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+.tab{flex:1;height:44px;border-radius:10px;border:1px solid transparent;background:transparent;color:rgba(255,255,255,.6);font:600 15px/1 var(--font-kr);cursor:pointer}
+.tab[aria-selected="true"]{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
+.sym-list{display:grid;gap:8px}
+.sym-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#fff;font:500 15px/1.4 var(--font-kr);text-align:left;cursor:pointer;transition:background .2s,border-color .2s}
+.sym-btn:hover{background:rgba(255,255,255,.08)}
+.sym-btn svg{flex:none;color:rgba(255,255,255,.45)}
+.sym-btn.on{border-color:#4BE3A6;background:rgba(75,227,166,.1)}
+.sym-btn.on svg{color:#4BE3A6;transform:rotate(90deg)}
+.sym-hint{margin:16px 0 0;font-size:14px;color:rgba(255,255,255,.6)}
+.sd{margin-top:18px;padding:22px 20px;border-radius:14px;background:#0F1F45;border:1px solid rgba(255,255,255,.1)}
+.sd h3{margin:0 0 14px;font-size:18px;font-weight:700}
+.sd-b{padding:12px 0;border-top:1px solid rgba(255,255,255,.08)}
+.sd-b h4{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,.62)}
+.sd-b ul{margin:0;padding-left:18px;font-size:14.5px;color:rgba(255,255,255,.85)}
+.sd-b li{margin:3px 0}
+.sd-b p{margin:0;font-size:14.5px;color:rgba(255,255,255,.85)}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.dot.main{background:#4BE3A6}.dot.rel{background:transparent;border:1.5px solid #F2C230}
+.sd-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sd-chips span{padding:5px 11px;border-radius:999px;background:rgba(75,227,166,.14);color:#8FF0C8;font-size:14px;font-weight:600}
+.sd-b:nth-child(3) li::marker{color:#F2C230}
+.sd-tip{background:rgba(242,194,48,.07);margin:4px -20px;padding:12px 20px;border-top:0}
+.sd-tip h4{color:#F5D267}
+.sd-cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.sd-cta .btn{height:46px;font-size:14.5px;flex:1 1 auto}
+.sd-more{margin:14px 0 0;font-size:13px;color:rgba(255,255,255,.5)}
+.sd-more a{color:var(--cyan);text-decoration:underline}
+#pane-steps .xg-steps{grid-template-columns:1fr 1fr;margin-top:0}
+.broad{padding:88px 0;background:var(--bg)}
+.broad h2{margin:14px 0 10px;font-size:clamp(26px,3.2vw,38px);line-height:1.3;letter-spacing:-.03em}
+.broad .lead{margin:0 0 36px;color:var(--muted);max-width:40em}
+.bc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bc{padding:24px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
+.bc b{font:600 12px/1 var(--font-en);color:var(--cyan-ink);letter-spacing:.1em}
+.bc h3{margin:10px 0 6px;font-size:16.5px;font-weight:600}
+.bc p{margin:0;font-size:14px;color:var(--muted)}
+.bc.contact{background:var(--navy);color:#fff;border-color:var(--navy);display:flex;flex-direction:column}
+.bc.contact p{color:rgba(255,255,255,.7)}
+.bc.contact .btn{margin-top:auto;height:46px;font-size:14.5px}
+.alert{display:flex;gap:14px;align-items:flex-start;margin-top:22px;padding:18px 20px;border-radius:14px;background:rgba(229,72,77,.08);border:1px solid rgba(229,72,77,.35);font-size:14.5px}
+.alert svg{flex:none;color:#E5484D;margin-top:2px}
+.alert b{color:#C9363B}
+@media (prefers-color-scheme: dark){.alert b{color:#FF8A8E}}
+@media (max-width:1080px){.bench-grid{grid-template-columns:1fr}.bench-stage{top:76px;z-index:5;background:var(--navy);padding-top:8px;margin:0 -28px;padding-left:28px;padding-right:28px}.bc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.btn-pill{white-space:nowrap;height:40px;padding:0 14px}.logo span{display:none}.bench-stage{margin:0 -20px;padding-left:8px;padding-right:8px}.bench-note{display:none}.panel{padding:4px 14px 18px}.bc-grid{grid-template-columns:1fr}.sd{padding:18px 16px}.sd-tip{margin:4px -16px;padding:12px 16px}.broad{padding:60px 0}}
+
+.xg-frame{display:block;width:100%;aspect-ratio:1100/760;border:0;border-radius:16px;background:#07112A}
+.xg-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:18px}
+.xg-step{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff;font-family:inherit;text-align:left;cursor:pointer;transition:background .2s,border-color .2s}
+.xg-step:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3)}
+.xg-step b{font:600 12px/1 var(--font-en);color:var(--cyan);letter-spacing:.08em}
+.xg-step span{font-size:16px;font-weight:600;margin-top:6px}
+.xg-step small{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.45}
+.xg-step.on{background:rgba(75,227,166,.12);border-color:#4BE3A6}
+.xg-step.on b{color:#4BE3A6}
+.xg-desc{margin:16px 0 0;min-height:3.3em;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.78);font-size:15px;line-height:1.65}
+.xg-desc strong{color:#4BE3A6;margin-right:6px}
+@media (max-width:1080px){.xg-steps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.xg-steps{grid-template-columns:repeat(2,1fr);gap:8px}.xg-step{padding:12px 14px}.xg-step span{font-size:15px}.xg-desc{font-size:14px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="디에스아이티 홈">
+      <img src="images/logo.webp" alt="디에스아이티 로고" class="logo-img">
+      <span>디에스아이티<small>DSIT</small></span>
+    </a>
+    <div class="head-cta">
+      <a href="index.html">홈</a>
+      <a href="products.html">렌탈 상품</a>
+      <a href="https://pf.kakao.com/_JNeyT" class="btn-pill" target="_blank" rel="noopener">카카오톡 상담</a>
+    </div>
+  </div>
+</header>
+
+<section class="shop-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> · 복합기 작동 원리</div>
+    <h1>컬러 복합기 작동 원리와 증상별 원인</h1>
+    <p>인쇄물에 생긴 문제는 대부분 어느 단계, 어느 부품에서 생겼는지 짚을 수 있습니다. 증상을 고르면 도면에서 의심 부품이 표시됩니다.</p>
+  </div>
+</section>
+
+<section class="bench" id="symptoms">
+  <div class="wrap bench-grid">
+    <div class="bench-stage">
+      <iframe class="xg-frame" data-xg src="xerography-engine.html?embed=1" title="컬러 복합기 내부 구조 인터랙티브 도면"></iframe>
+      <p class="bench-note">※ 일반적인 탠덤 방식 컬러 복합기 구조이며, 전압·온도는 대표값입니다. 실제 구조는 모델마다 다릅니다.</p>
+    </div>
+    <div class="panel">
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab" role="tab" aria-selected="true" aria-controls="pane-sym">증상으로 찾기</button>
+        <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="pane-steps">작동 원리 6단계</button>
+      </div>
+      <div id="pane-sym" role="tabpanel">
+        <div class="sym-list"><button type="button" class="sym-btn" data-k="line" aria-pressed="false"><span>인쇄물에 세로 줄이 생겨요</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button><button type="button" class="sym-btn" data-k="color" aria-pressed="false"><span>특정 색만 안 나오거나 흐려요</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button><button type="button" class="sym-btn" data-k="fuse" aria-pressed="false"><span>손으로 문지르면 번지거나 가루가 묻어나요</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button><button type="button" class="sym-btn" data-k="faint" aria-pressed="false"><span>전체가 연하게 나와요</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button><button type="button" class="sym-btn" data-k="reg" aria-pressed="false"><span>색이 어긋나서 겹쳐 보여요</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
+        <p class="sym-hint" id="sym-hint">증상을 누르면 도면에 <b style="color:#4BE3A6">민트색</b>으로 의심 부품이 표시되고, 아래에 원인과 확인 방법이 나옵니다.</p>
+        <article class="sd" id="sym-line" hidden>
+  <h3>인쇄물에 세로 줄이 생겨요</h3>
+  <div class="sd-b"><h4><i class="dot main"></i>주로 의심되는 부품</h4><div class="sd-chips"><span>감광 드럼 표면 흠집·오염</span><span>클리너 블레이드 마모</span></div></div>
+  <div class="sd-b"><h4><i class="dot rel"></i>함께 점검하는 부분</h4><ul><li>대전 롤러 오염</li><li>중간 전사 벨트 흠집</li><li>정착 롤러 표면 손상</li><li>복사할 때만 생긴다면 원고 유리(스캐너) 오염</li></ul></div>
+  <div class="sd-b sd-tip"><h4>먼저 확인해 보세요</h4><ul><li>PC 인쇄물과 복사본을 비교해 보세요. 복사할 때만 줄이 생기면 원고 유리와 자동급지 쪽 좁은 띠 유리를 부드러운 천으로 닦아 보세요.</li><li>줄이 한 가지 색으로만 생기는지 확인해 주세요. 어느 드럼 문제인지 바로 알 수 있습니다.</li></ul></div>
+  <div class="sd-b"><h4>DSIT는 이렇게 조치합니다</h4><p>줄의 색·위치·간격을 보고 원인 부품을 특정한 뒤, 드럼이나 클리너 블레이드를 교체합니다.</p></div>
+  <div class="sd-cta"><a class="btn btn-primary" href="index.html?as=%EC%9D%B8%EC%87%84%EB%AC%BC%EC%97%90%20%EC%84%B8%EB%A1%9C%20%EC%A4%84%EC%9D%B4%20%EC%83%9D%EA%B2%A8%EC%9A%94#contact">이 증상으로 A/S 접수</a><a class="btn btn-ghost" href="tel:0559205551">055-920-5551</a></div>
+</article>
+<article class="sd" id="sym-color" hidden>
+  <h3>특정 색만 안 나오거나 흐려요</h3>
+  <div class="sd-b"><h4><i class="dot main"></i>주로 의심되는 부품</h4><div class="sd-chips"><span>해당 색 토너 부족</span><span>해당 색 현상기</span><span>해당 색 감광 드럼</span></div></div>
+  <div class="sd-b"><h4><i class="dot rel"></i>함께 점검하는 부분</h4><ul><li>레이저 유닛 창 오염</li><li>1차 전사 롤러</li><li>PC 인쇄 설정(흑백·토너 절약 모드)</li></ul></div>
+  <div class="sd-b sd-tip"><h4>먼저 확인해 보세요</h4><ul><li>복합기 화면에서 해당 색의 토너 잔량을 확인해 보세요.</li><li>PC 인쇄 설정이 &#x27;흑백&#x27;이나 &#x27;토너 절약&#x27;으로 되어 있지 않은지 확인해 보세요.</li><li>토너를 새로 바꿨는데도 같다면 바로 A/S를 접수해 주세요.</li></ul></div>
+  <div class="sd-b"><h4>DSIT는 이렇게 조치합니다</h4><p>원격으로 토너 잔량과 오류 기록을 먼저 확인하고, 필요한 부품을 챙겨 방문합니다.</p></div>
+  <div class="sd-cta"><a class="btn btn-primary" href="index.html?as=%ED%8A%B9%EC%A0%95%20%EC%83%89%EB%A7%8C%20%EC%95%88%20%EB%82%98%EC%98%A4%EA%B1%B0%EB%82%98%20%ED%9D%90%EB%A0%A4%EC%9A%94#contact">이 증상으로 A/S 접수</a><a class="btn btn-ghost" href="tel:0559205551">055-920-5551</a></div>
+</article>
+<article class="sd" id="sym-fuse" hidden>
+  <h3>손으로 문지르면 번지거나 가루가 묻어나요</h3>
+  <div class="sd-b"><h4><i class="dot main"></i>주로 의심되는 부품</h4><div class="sd-chips"><span>정착기 (가열 롤러·가압 롤러)</span></div></div>
+  <div class="sd-b"><h4><i class="dot rel"></i>함께 점검하는 부분</h4><ul><li>용지 종류 설정과 실제 용지가 다른 경우</li><li>습기를 먹은 용지</li><li>두꺼운 용지·라벨지 사용</li></ul></div>
+  <div class="sd-b sd-tip"><h4>먼저 확인해 보세요</h4><ul><li>습기 없는 새 용지로 다시 출력해 보세요.</li><li>두꺼운 용지를 쓴다면 용지함 설정을 &#x27;두꺼운 용지&#x27;로 바꿔 보세요.</li><li>정착기 주변은 매우 뜨겁습니다. 용지가 걸려도 안쪽은 직접 만지지 마세요.</li></ul></div>
+  <div class="sd-b"><h4>DSIT는 이렇게 조치합니다</h4><p>정착 온도와 롤러 상태를 점검하고, 필요하면 정착기 유닛을 교체합니다.</p></div>
+  <div class="sd-cta"><a class="btn btn-primary" href="index.html?as=%EC%86%90%EC%9C%BC%EB%A1%9C%20%EB%AC%B8%EC%A7%80%EB%A5%B4%EB%A9%B4%20%EB%B2%88%EC%A7%80%EA%B1%B0%EB%82%98%20%EA%B0%80%EB%A3%A8%EA%B0%80%20%EB%AC%BB%EC%96%B4%EB%82%98%EC%9A%94#contact">이 증상으로 A/S 접수</a><a class="btn btn-ghost" href="tel:0559205551">055-920-5551</a></div>
+</article>
+<article class="sd" id="sym-faint" hidden>
+  <h3>전체가 연하게 나와요</h3>
+  <div class="sd-b"><h4><i class="dot main"></i>주로 의심되는 부품</h4><div class="sd-chips"><span>토너 잔량</span><span>대전 롤러</span><span>2차 전사 롤러</span></div></div>
+  <div class="sd-b"><h4><i class="dot rel"></i>함께 점검하는 부분</h4><ul><li>인쇄 농도·토너 절약 설정</li><li>습한 설치 환경</li><li>감광 드럼 수명</li></ul></div>
+  <div class="sd-b sd-tip"><h4>먼저 확인해 보세요</h4><ul><li>토너 잔량과 인쇄 농도·토너 절약 설정을 확인해 보세요.</li><li>장비 주변이 지나치게 습하지 않은지 확인해 보세요.</li></ul></div>
+  <div class="sd-b"><h4>DSIT는 이렇게 조치합니다</h4><p>대전·전사 상태와 드럼 수명을 함께 점검해 교체하거나 조정합니다.</p></div>
+  <div class="sd-cta"><a class="btn btn-primary" href="index.html?as=%EC%A0%84%EC%B2%B4%EA%B0%80%20%EC%97%B0%ED%95%98%EA%B2%8C%20%EB%82%98%EC%99%80%EC%9A%94#contact">이 증상으로 A/S 접수</a><a class="btn btn-ghost" href="tel:0559205551">055-920-5551</a></div>
+</article>
+<article class="sd" id="sym-reg" hidden>
+  <h3>색이 어긋나서 겹쳐 보여요</h3>
+  <div class="sd-b"><h4><i class="dot main"></i>주로 의심되는 부품</h4><div class="sd-chips"><span>중간 전사 벨트</span><span>색 위치 보정(컬러 레지스트레이션)</span></div></div>
+  <div class="sd-b"><h4><i class="dot rel"></i>함께 점검하는 부분</h4><ul><li>드럼 구동 기어 마모</li><li>1차 전사 롤러</li><li>장비를 옮긴 뒤 수평이 틀어진 경우</li></ul></div>
+  <div class="sd-b sd-tip"><h4>먼저 확인해 보세요</h4><ul><li>복합기 메뉴에 &#x27;색 위치 보정(컬러 레지스트레이션)&#x27; 기능이 있다면 실행해 보세요.</li><li>최근 장비를 옮겼다면 바닥이 평평한지 확인해 보세요.</li></ul></div>
+  <div class="sd-b"><h4>DSIT는 이렇게 조치합니다</h4><p>전사 벨트와 구동 기어 상태를 점검하고 색 위치를 다시 맞춥니다.</p></div>
+  <div class="sd-cta"><a class="btn btn-primary" href="index.html?as=%EC%83%89%EC%9D%B4%20%EC%96%B4%EA%B8%8B%EB%82%98%EC%84%9C%20%EA%B2%B9%EC%B3%90%20%EB%B3%B4%EC%97%AC%EC%9A%94#contact">이 증상으로 A/S 접수</a><a class="btn btn-ghost" href="tel:0559205551">055-920-5551</a></div>
+</article>
+        <p class="sd-more">표시된 부품은 가장 흔한 원인입니다. 실제 원인은 점검 후 확정되며, 넓게 봐야 하는 경우는 <a href="#broad">아래 안내</a>를 참고하세요.</p>
+      </div>
+      <div id="pane-steps" role="tabpanel" hidden>
+        <div class="xg-steps"><button type="button" class="xg-step" data-i="0" aria-pressed="false"><b>01</b><span>대전</span><small>드럼 표면에 전기를 고르게</small></button><button type="button" class="xg-step" data-i="1" aria-pressed="false"><b>02</b><span>노광</span><small>레이저로 글자 모양 새기기</small></button><button type="button" class="xg-step" data-i="2" aria-pressed="false"><b>03</b><span>현상</span><small>글자 모양에 토너 묻히기</small></button><button type="button" class="xg-step" data-i="3" aria-pressed="false"><b>04</b><span>전사</span><small>토너를 벨트 → 종이로</small></button><button type="button" class="xg-step" data-i="4" aria-pressed="false"><b>05</b><span>정착</span><small>열과 압력으로 굳히기</small></button><button type="button" class="xg-step" data-i="5" aria-pressed="false"><b>06</b><span>클리닝</span><small>남은 토너 정리</small></button></div>
+        <p class="xg-desc" id="xg-desc" aria-live="polite">단계를 누르면 도면에서 해당 부품이 표시됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="broad" id="broad">
+  <div class="wrap">
+    <div class="cat-eyebrow">WIDER CHECK</div>
+    <h2>이럴 땐 한 부품이 아니라<br>전체 점검이 필요합니다</h2>
+    <p class="lead">복합기는 대전부터 정착까지 단계가 이어져 있어서, 한 곳의 문제가 다른 단계의 증상으로 나타나기도 합니다. 아래에 해당하면 증상 하나만 보지 않고 장비 전체를 점검합니다.</p>
+    <div class="bc-grid"><div class="bc"><b>01</b><h3>두 가지 이상 증상이 함께 나타날 때</h3><p>예를 들어 줄과 번짐이 같이 생기면 원인이 한 곳이 아닐 수 있습니다.</p></div><div class="bc"><b>02</b><h3>부품·토너를 바꾼 뒤에도 같은 증상이 반복될 때</h3><p>겉으로 보이는 부품이 아니라 그 앞뒤 단계에 원인이 있는 경우입니다.</p></div><div class="bc"><b>03</b><h3>이상한 소리나 오류 코드가 함께 뜰 때</h3><p>구동부나 센서 문제일 수 있어 화면의 오류 코드를 알려주시면 빠릅니다.</p></div><div class="bc"><b>04</b><h3>오래 쓰거나 출력량이 많은 장비일 때</h3><p>드럼·벨트·정착기 등 여러 소모 부품의 교체 시기가 한꺼번에 다가옵니다.</p></div><div class="bc"><b>05</b><h3>줄이나 점이 일정한 간격으로 반복될 때</h3><p>반복 간격은 원인 롤러의 둘레와 같습니다. 엔지니어가 간격을 재서 어느 롤러인지 찾아냅니다.</p></div>
+      <div class="bc contact"><b style="color:var(--cyan)">TIP</b><h3>목록에 없는 증상인가요?</h3><p>출력물 사진을 카카오톡으로 보내주시면 원인 파악이 훨씬 빨라집니다.</p><a class="btn btn-primary" href="https://pf.kakao.com/_JNeyT" target="_blank" rel="noopener">카카오톡으로 사진 보내기</a></div>
+    </div>
+    <div class="alert" role="note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><div><b>타는 냄새나 연기가 나면</b> 바로 전원을 끄고 전원 플러그를 뽑은 뒤 <a href="tel:0559205551" style="text-decoration:underline">055-920-5551</a>로 연락해 주세요. 다시 켜서 확인하지 마세요.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="logo"><img src="images/logo.webp" alt="디에스아이티 로고" class="logo-img logo-img-foot"></div>
+      <p>상호 DSIT(디에스아이티) | 대표 김상현 | 사업자등록번호 456-23-01701</p>
+      <p>주소 경상남도 진주시 충무공동69-3 윙스타워B동 1410호</p>
+      <p>전화 <a href="tel:0559205551">055-920-5551</a> | 이메일 dsit2024@naver.com</p>
+      <div class="foot-links"><a href="privacy.html" target="_blank" rel="noopener"><strong>개인정보 처리방침</strong></a><a href="index.html">홈</a><a href="products.html">렌탈 상품</a><a href="guide.html">복합기 임대 가이드</a><a href="help.html" target="_blank" rel="noopener">복합기 도움말</a></div>
+      <p style="margin-top:18px">© <span id="yr">2026</span> DSIT. All rights reserved.</p>
+    </div>
+    <div class="foot-tag">SMILE · SMART · SPEED</div>
+  </div>
+</footer>
+
+<a href="tel:0559205551" class="call-float" aria-label="전화 상담 055-920-5551"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+<a href="https://pf.kakao.com/_JNeyT" class="kakao-float" aria-label="카카오톡 상담" target="_blank" rel="noopener"><span>K</span><em style="font-style:normal">카카오톡 상담</em></a>
+
+
+<a href="https://pf.kakao.com/_JNeyT" class="kakao-float" aria-label="카카오톡 상담" target="_blank" rel="noopener"><span>K</span><em style="font-style:normal">카카오톡 상담</em></a>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var XG_STEPS=[{"name": "대전", "desc": "대전 롤러가 감광 드럼 표면을 약 −600 V로 고르게 대전합니다. 대전이 고르지 않으면 바탕이 지저분해지거나 농도가 들쭉날쭉해집니다.", "focus": {"target": -1, "parts": ["chg0", "chg1", "chg2", "chg3"], "label": "대전 롤러", "text": "① 대전 · 드럼 표면 약 −600 V"}}, {"name": "노광", "desc": "레이저 유닛이 인쇄할 부분만 약 −100 V로 방전해, 눈에 보이지 않는 그림(정전잠상)을 드럼에 새깁니다. 레이저 창이 오염되면 특정 색에 흰 줄이 생길 수 있습니다.", "focus": {"target": -1, "parts": ["poly0", "poly1", "poly2", "poly3"], "label": "레이저 유닛", "text": "② 노광 · 인쇄할 부분만 약 −100 V"}}, {"name": "현상", "desc": "현상기가 (−)전기를 띤 토너를 방전된 부분에만 붙입니다. 토너가 부족하거나 현상기에 문제가 있으면 해당 색이 흐리게 나옵니다.", "focus": {"target": -1, "parts": ["mag0", "mag1", "mag2", "mag3"], "label": "현상기", "text": "③ 현상 · 방전된 부분에 토너 부착"}}, {"name": "전사", "desc": "노랑·마젠타·시안·검정 토너가 중간 전사 벨트 위에 차례로 겹쳐진 뒤, 2차 전사 롤러에서 한 번에 용지로 옮겨집니다. 벨트나 롤러 위치가 틀어지면 색이 어긋나 보입니다.", "focus": {"target": -1, "parts": ["ptr0", "ptr1", "ptr2", "ptr3", "blt0", "blt1", "str"], "label": "중간 전사 벨트", "text": "④ 전사 · 4색을 벨트에 겹쳐 용지로"}}, {"name": "정착", "desc": "약 170 ℃의 가열 롤러와 가압 롤러가 토너를 녹여 종이에 고정합니다. 정착이 약하면 손으로 문질렀을 때 번지거나 가루가 묻어납니다.", "focus": {"target": 4, "parts": ["hot", "prs"], "label": "정착기", "text": "⑤ 정착 · 약 170 ℃ 열 + 압력"}}, {"name": "클리닝", "desc": "클리너 블레이드가 드럼에 남은 토너를 긁어내 다음 장을 준비합니다. 블레이드가 닳으면 인쇄물에 세로 줄이 생깁니다.", "focus": {"target": -1, "parts": ["drum0", "drum1", "drum2", "drum3"], "label": "감광 드럼 · 클리너", "text": "⑥ 클리닝 · 드럼에 남은 토너 제거"}}];
+var XG_SYM=[{"key": "line", "focus": {"target": -1, "parts": ["drum0", "drum1", "drum2", "drum3", "chg0", "chg1", "chg2", "chg3"], "label": "감광 드럼 · 클리너", "text": "세로 줄 · 드럼·클리너 점검"}}, {"key": "color", "focus": {"target": -1, "parts": ["mag0", "mag1", "mag2", "mag3", "poly0", "poly1", "poly2", "poly3"], "label": "현상기 · 레이저 유닛", "text": "색 빠짐 · 토너·현상·노광 점검"}}, {"key": "fuse", "focus": {"target": 4, "parts": ["hot", "prs"], "label": "정착기", "text": "번짐 · 정착기 점검"}}, {"key": "faint", "focus": {"target": -1, "parts": ["chg0", "chg1", "chg2", "chg3", "str"], "label": "대전 롤러 · 2차 전사", "text": "전체 흐림 · 대전·전사 점검"}}, {"key": "reg", "focus": {"target": -1, "parts": ["blt0", "blt1", "ptr0", "ptr1", "ptr2", "ptr3", "gear0", "gear1", "gear2", "gear3"], "label": "중간 전사 벨트", "text": "색 어긋남 · 전사 벨트 점검"}}];
+
+(function(){
+  var fr=document.querySelector('iframe[data-xg]'); if(!fr) return;
+  var last=null;
+  function send(m){ try{fr.contentWindow.postMessage(m,'*');}catch(e){} }
+  addEventListener('message',function(e){
+    if(e.source!==fr.contentWindow) return; var d=e.data||{};
+    if(d.dsitReady && last) send(last);
+    if(d.dsitH){ fr.style.height=d.dsitH+'px'; fr.style.aspectRatio='auto'; }
+    if(d.dsitUser){ last=null; if(window.xgOnUser) window.xgOnUser(); }
+  });
+  window.xgFocus=function(o){ var m={dsit:'focus'}; for(var k in o) m[k]=o[k]; last=m; send(m); };
+  window.xgTour=function(){ last=null; send({dsit:'tour'}); };
+})();
+
+
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.sym-btn')), hint=document.getElementById('sym-hint'), cur=null;
+  function clear(){ cur=null; btns.forEach(function(b){b.classList.remove('on');b.setAttribute('aria-pressed','false');}); [].forEach.call(document.querySelectorAll('.sd'),function(p){p.hidden=true;}); hint.hidden=false; }
+  function open(k,scroll){
+    var s=XG_SYM.filter(function(x){return x.key===k;})[0]; if(!s) return;
+    if(window.xgClearSteps) window.xgClearSteps();
+    cur=k; hint.hidden=true;
+    btns.forEach(function(b){var on=b.dataset.k===k; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false');});
+    [].forEach.call(document.querySelectorAll('.sd'),function(p){p.hidden=p.id!=='sym-'+k;});
+    window.xgFocus(s.focus);
+    if(scroll){ var p=document.getElementById('sym-'+k); if(p&&innerWidth>1080) p.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+  }
+  btns.forEach(function(b){ b.addEventListener('click',function(){ if(cur===b.dataset.k){clear();window.xgTour();} else open(b.dataset.k,true); }); });
+  window.xgOnUser=function(){ clear(); };
+  window.xgClearOthers=function(who){ if(who==='steps') clear(); };
+  /* 탭 */
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function(t){ t.addEventListener('click',function(){
+    tabs.forEach(function(x){ var on=x===t; x.setAttribute('aria-selected',on?'true':'false'); document.getElementById(x.getAttribute('aria-controls')).hidden=!on; });
+    clear(); if(window.xgClearSteps) window.xgClearSteps(); window.xgTour();
+  });});
+  var m=location.hash.match(/^#sym-(\w+)/); if(m) open(m[1],false);
+})();
+
+
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.xg-step')), out=document.getElementById('xg-desc'), cur=-1, hint=out?out.innerHTML:'';
+  function clear(){ cur=-1; btns.forEach(function(b){b.classList.remove('on');b.setAttribute('aria-pressed','false');}); if(out) out.innerHTML=hint; }
+  var prevUser=window.xgOnUser; window.xgOnUser=function(){ clear(); if(prevUser) prevUser(); };
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var i=+b.dataset.i;
+    if(i===cur){ clear(); window.xgTour(); return; }
+    if(window.xgClearOthers) window.xgClearOthers('steps');
+    cur=i; btns.forEach(function(x){var on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false');});
+    var s=XG_STEPS[i]; if(out) out.innerHTML='<strong>'+String(i+1).padStart(2,'0')+' '+s.name+'</strong> '+s.desc;
+    window.xgFocus(s.focus);
+  });});
+  window.xgClearSteps=clear;
+})();
+
+</script>
+</body>
+</html>
